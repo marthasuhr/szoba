@@ -1,0 +1,32 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "niveau grotesk", sans-serif;
+  background-color: var(--baggrund);
+  color: var(--pirmary1);
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  max-width: 2000px;
+  min-height: 100vh;
+  margin: auto;
+}
+
+/* Typografi */
+a {
+  text-decoration: none;
+  color: var(--primary1);
+}
+
+ul {
+  list-style: none;
+}
