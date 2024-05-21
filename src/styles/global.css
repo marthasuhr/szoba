@@ -1,3 +1,18 @@
+:root {
+  /* Farver */
+  --blue700: #0000ee;
+  /* Grå */
+  --grey50: #fefefe;
+  --grey950: #292929;
+
+  /* Typografi */
+  --light: 300;
+  --regular: 400;
+  --medium: 500;
+  --bold: 700;
+  --black: 900;
+}
+
 /* Reset */
 * {
   margin: 0;
@@ -6,8 +21,6 @@
 }
 body {
   font-family: "niveau grotesk", sans-serif;
-  background-color: var(--baggrund);
-  color: var(--pirmary1);
 }
 img {
   width: 100%;
@@ -22,11 +35,50 @@ body {
 }
 
 /* Typografi */
+h1 {
+  font-size: 40px;
+  color: var(--grey950);
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: var(--bold);
+  color: var(--grey950);
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: var(--medium);
+  color: var(--grey950);
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: var(--bold);
+  color: var(--grey950);
+}
+
 a {
   text-decoration: none;
-  color: var(--primary1);
+  color: var(--grey950);
 }
 
 ul {
   list-style: none;
+}
+
+@media (min-width: 900px) {
+  h1 {
+    font-size: 64px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 32px;
+  }
+  h4 {
+    font-size: 24px;
+  }
 }

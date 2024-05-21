@@ -1,0 +1,100 @@
+---
+import Logo from "../components/svg/Logo.astro";
+import Instagram from "../components/svg/Instagram.astro";
+import Facebook from "../components/svg/Facebook.astro";
+
+---
+
+
+<footer>
+  <div class="info">
+    <div class="grid">
+      <div class="hide">
+        <a target="_blank" href="https://www.instagram.com/szoba_store"><Instagram /></a>
+        <a target="_blank" href="https://www.facebook.com/Twindancestudio/"><Facebook /></a>
+      </div>
+      <div>
+        <p class="p_bold">Følg os</p>
+        <p>@SZOBA_STORE</p>
+        <p>@SZOBA_STORE</p>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="hide">
+    
+      </div>
+      <div>
+        <p class="p_bold">Find os</p>
+        <a target="_blank" href="https://goo.gl/maps/2fVyhh5rYSxiQ1w26?coh=178573&entry=tt"><p>Saxogade 77, 1662, København V</p></a>
+
+      </div>
+    </div>
+    <div class="grid">
+      <div class="hide">
+  
+      </div>
+      <div>
+        <p class="p_bold">Kontakt os</p>
+        <p>Mail: info@szoba.dk</p>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="logo">
+    <a href="../"> <Logo /></a>
+
+  </div>
+</footer>
+
+<style>
+  footer {
+    padding: 1.5rem;
+    background-color: #E2E2E2;;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  div {
+    padding-bottom: 1.5rem;
+    padding-top: 0.5rem;
+  }
+  p {
+    padding-bottom: 0.5rem;
+  }
+  .hide {
+    display: none;
+  }
+  a p {
+    text-decoration: underline;
+  }
+
+  @media (min-width: 900px) {
+    footer {
+      padding: 3rem;
+    }
+
+    .info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 60px auto;
+    }
+    div {
+      padding-top: 0;
+    }
+    .hide {
+      display: block;
+    }
+
+     .logo {
+    display: flex;
+    justify-content:end;
+
+  }
+  }
+</style>

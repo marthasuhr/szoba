@@ -1,0 +1,44 @@
+---
+import ShopCard from "../components/ShopCard.astro";
+import Button from "./Button.astro";
+import InstaTeaser from "./InstaTeaser.astro";
+---
+
+<section>
+    <h2>
+        UGENS UDVALGTE VARER
+    </h2>
+    <p>Dyk ned i denne uges ekslusive online drop</p>
+    <div class="shop_container" >
+      <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
+    <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
+    <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
+    <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
+          <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
+    <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
+    <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
+    <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
+    <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
+    <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
+    </div>
+    <Button variant="lys" size="lille">Se mere</Button> 
+<InstaTeaser/>
+</section>
+
+<style>
+   .shop_container{
+  display: grid;
+ 
+ grid-template-columns: 1fr 1fr;
+   }
+
+  @media (min-width: 900px) {
+
+    .shop_container{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+  }
+
+</style>

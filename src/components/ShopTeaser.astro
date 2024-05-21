@@ -1,0 +1,26 @@
+---
+import ShopCard from "../components/ShopCard.astro";
+import Button from "./Button.astro";
+import H2citat from "./H2citat.astro";
+---
+
+<section>
+    <h1>UGENS NYHEDER</h1>
+    <p>Oplev ugens mest eksklusive nyheder - håndplukkede varer, kun tilgængelige online!</p>
+    <div class="card_container">
+    <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
+    <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
+    <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
+    <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
+    </div>
+    <Button variant="lys" size="lille" >Se Mere</Button>
+    <H2citat indhold="MERE END BARE MODE HOS SZÔBA"/>
+</section>
+
+<style>
+   .card_container{
+  display: grid;
+ 
+ grid-template-columns: 1fr 1fr;
+   }
+</style>
