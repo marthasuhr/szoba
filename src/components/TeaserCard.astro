@@ -1,14 +1,14 @@
 ---
 import Button from "../components/Button.astro";
-
+const { img, tekst } = Astro.props;
 ---
 
  <div class="container">
-  <img src="../img/herotest.png" alt="heroplaceholder" style="width:100%;" >
+<img src={img} alt="">
 
   <div class="centered">
  
-    <Button variant="lys" size="stor">Shop</Button>
+    <Button variant="lys" size="stor">{tekst}</Button>
   </div>
 </div> 
 <style>
@@ -18,7 +18,7 @@ import Button from "../components/Button.astro";
 .container {
   position: relative;
   text-align: center;
-
+padding: 1rem 2rem 1rem 2rem;
 }
 
 /* Centreret tekst */
