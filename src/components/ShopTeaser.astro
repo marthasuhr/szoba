@@ -2,20 +2,48 @@
 import ShopCard from "../components/ShopCard.astro";
 import Button from "./Button.astro";
 import H2citat from "./H2citat.astro";
+
+const shop = await fetch(
+  "https://fyvvuefyxnoyynrjyhuk.supabase.co/rest/v1/shop",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ5dnZ1ZWZ5eG5veXlucmp5aHVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU5NTkxOTksImV4cCI6MjAzMTUzNTE5OX0.72K41vRnBsdHG8-yrn2BZLz5WLf88lxk8CPRLKEEYMk",
+    },
+  }
+).then((response) => {
+  return response.json();
+
+});
+
+console.log("shop", shop);
+
 ---
 
 <section>
     <h1>UGENS NYHEDER</h1>
     <p>Oplev ugens mest eksklusive nyheder - håndplukkede varer, kun tilgængelige online!</p>
     <div class="card_container">
+
+  {
+        shop.map((vare) => {
+
+          return <ShopCard data={vare} />;
+        } 
+   
+    ) 
+      }  
+
+    <!-- 
     <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
     <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
     <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
-    <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
+    <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard> -->
     </div>
   
     <div class="knap" ><Button variant="lys" size="lille" >Se Mere</Button></div>
-   <div class="citat" > <H2citat indhold="MERE END BARE MODE HOS SZÔBA"/> </div>
+   <div class="citat" > <H2citat indhold="MERE END BARE MODE HOS SZÔBA"/> </div> 
 </section>
 
 <style>

@@ -1,14 +1,15 @@
 ---
-const { imgPath, produkt, pris } = Astro.props;
+const { data} = Astro.props;
 ---
 
 <section>
   <div class="placeholder">
-    <img src={imgPath} alt="tøj" />
+    
+      <img src={"img/" + data.img} alt={"Image of " + data.img} />
   </div>
   <div class="beskrivelse">
-    <h4>{produkt}</h4>
-    <p>{pris}</p>
+    <h4>{data.produkt}</h4>
+    <p>{data.pris}</p>
   </div>
 </section>
 
@@ -23,6 +24,12 @@ const { imgPath, produkt, pris } = Astro.props;
 
     }
 
+    img{
+         width:  100px;
+    height: 100px;
+    object-fit: cover;
+    }
+
 h4{
      text-align: left;
 }
@@ -35,4 +42,19 @@ p{
 border: solid var(--grey950) 2px;
 padding: 0.5rem 1rem 0.5rem 1rem;
 }
+
+
+ @media (min-width: 900px) {
+
+    img{
+         width:  200px;
+    height: 200px;
+    object-fit: cover;
+    }
+
+ }
+    
+  
+
+   
 </style>
