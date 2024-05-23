@@ -1,0 +1,19 @@
+---
+const { overskrift, brødtekst,img } = Astro.props;
+---
+
+<section>
+    <h4>
+        {overskrift}
+    </h4>
+    <p>{brødtekst}</p>
+    <img src={img} alt="">
+</section>
+
+<style>
+
+
+    section{
+        margin: 3rem;
+    }
+</style>

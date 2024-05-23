@@ -14,15 +14,29 @@ import H2citat from "./H2citat.astro";
     <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
     </div>
   
-    <Button variant="lys" size="lille" >Se Mere</Button>
-    <H2citat indhold="MERE END BARE MODE HOS SZÔBA"/>
+    <div class="knap" ><Button variant="lys" size="lille" >Se Mere</Button></div>
+   <div class="citat" > <H2citat indhold="MERE END BARE MODE HOS SZÔBA"/> </div>
 </section>
 
 <style>
    .card_container{
   display: grid;
  grid-template-columns: 1fr 1fr;
- margin: 4rem;
+
+   }
+.knap{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0 2rem 0;
+}
+
+.citat{
+   
+  padding: 4rem 0 2rem 0;
+}
+   section{
+     margin: 2rem;
    }
 
 
