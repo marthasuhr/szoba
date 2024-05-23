@@ -1,10 +1,27 @@
 ---
 import EventCard from "./EventCard.astro";
 ---
-
+ <h2>UPCOMING EVENTS</h2>
+ <p>Sæt kryds i kalenderen og glæd dig til det næste event!</p>
 <section>
+   
     <EventCard/>
     <EventCard/>
     <EventCard/>
 </section>
 
+<style>
+
+    section{
+display: flex;
+flex-direction: column;
+    }
+  @media (min-width: 900px) {
+     section{
+display: flex;
+flex-direction: row;
+    }
+
+  }
+
+</style>
