@@ -22,9 +22,9 @@ console.log("shop", shop);
 ---
 
 <section>
-  <div class="tekst_sektion" >
+ 
     <h2>UGENS NYHEDER</h2>
-    <p>Oplev ugens mest eksklusive nyheder - håndplukkede varer, kun tilgængelige online!</p> </div>
+    <p>Oplev ugens mest eksklusive nyheder - håndplukkede varer, kun tilgængelige online!</p> 
     <div class="card_container">
 
   {
@@ -49,10 +49,7 @@ console.log("shop", shop);
 
 <style>
 
-  .tekst_sektion{
 
-margin: 1rem 0 2rem 0;
-  }
    .card_container{
   display: grid;
  grid-template-columns: 1fr 1fr;
@@ -68,6 +65,10 @@ margin: 1rem 0 2rem 0;
 
 
   
+h2, p{
+ display: grid;
+margin: 2rem;
+}
 
 
   @media (min-width: 900px) {
