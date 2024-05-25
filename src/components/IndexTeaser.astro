@@ -3,13 +3,26 @@ import TeaserCard from "./TeaserCard.astro"
 ---
 
 <section>
-    <TeaserCard img="../img/events.webp" tekst="Events"></TeaserCard>
+<TeaserCard img="../img/events.webp" tekst="Events"></TeaserCard> 
     <TeaserCard img="../img/keramik.webp" tekst="Kunst"></TeaserCard>
 </section>
 
 <style>
 
-  
+ section{
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 2rem 0 2rem;
+ }
+
+      @media (min-width: 900px) {
+
+  section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+   gap: 4rem;
+    margin: 4rem 4rem 4rem 4rem;
+  }}
 
 
 </style>

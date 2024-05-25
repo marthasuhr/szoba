@@ -22,7 +22,7 @@ console.log("shop", shop);
 ---
 
 <section>
-    <h1>UGENS NYHEDER</h1>
+    <h2>UGENS NYHEDER</h2>
     <p>Oplev ugens mest eksklusive nyheder - håndplukkede varer, kun tilgængelige online!</p>
     <div class="card_container">
 
@@ -50,22 +50,18 @@ console.log("shop", shop);
    .card_container{
   display: grid;
  grid-template-columns: 1fr 1fr;
+ overflow: hidden;
 
    }
 .knap{
   display: grid;
   align-items: center;
   justify-content: center;
-  padding: 2rem 0 2rem 0;
+  padding: 2rem 0 0 0;
 }
 
-.citat{
-   
-  padding: 4rem 0 2rem 0;
-}
-   section{
-     margin: 2rem;
-   }
+
+  
 
 
   @media (min-width: 900px) {
