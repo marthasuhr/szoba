@@ -1,14 +1,14 @@
 ---
 import Button from "../components/Button.astro";
-const { img, tekst } = Astro.props;
+const { img, tekst, link } = Astro.props;
 ---
 
  <div class="container">
 <img src={img} alt="">
 
   <div class="centered">
- 
-    <Button variant="lys" size="stor">{tekst}</Button>
+ <a href={link}>
+    <Button variant="lys" size="stor">{tekst}</Button></a>
   </div>
 </div> 
 <style>

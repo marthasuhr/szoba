@@ -45,11 +45,26 @@ console.log("shop", shop);
     <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
     <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
     </div> --> 
-    <Button variant="lys" size="lille">Se mere</Button> 
+    <div class="knap"><Button variant="lys" size="lille">Se mere</Button> </div>
 <InstaTeaser/>
 </section>
 
 <style>
+.knap{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0 2rem 0;
+}
+  h2{
+ display: grid;
+  margin: 2rem 2rem 0.5rem 2rem;
+}
+
+p{
+  display: grid;
+  margin: 0 2rem 2rem 2rem;
+}
    .shop_container{
   display: grid;
  

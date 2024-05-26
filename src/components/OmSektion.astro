@@ -7,13 +7,26 @@ const { overskrift, brødtekst,img } = Astro.props;
         {overskrift}
     </h4>
     <p>{brødtekst}</p>
-    <img src={img} alt="">
+    <div class="imgtop" >
+    <img src={img} alt=""></div>
 </section>
 
 <style>
 
+.imgtop{
+    display: grid;
+    margin-top: 2rem;
+}
+section{
+    display: grid;
+    gap: 0.5rem;
+}
+
+  @media (min-width: 900px) {
 
     section{
-        margin: 3rem;
+        display: grid;
+        gap: 2rem;
     }
+  }
 </style>

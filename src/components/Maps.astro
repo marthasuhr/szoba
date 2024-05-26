@@ -1,11 +1,17 @@
 ---
+import H2Citat from "./H2citat.astro"
 ---
 <section>
-<h1>
-BESØG OS HER
-</h1>
+<H2Citat indhold="BESØG OS HER"/>
+
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4500.367110774712!2d12.548764641097137!3d55.66840817316526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46525375c0d2847b%3A0x8b07e091226c5878!2sSaxogade%2077%2C%201662%20K%C3%B8benhavn!5e0!3m2!1sda!2sdk!4v1716459459849!5m2!1sda!2sdk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<a href="../about/#omos">
+<div class="svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="43" height="55" viewBox="0 0 43 55" fill="none">
+  <path d="M17.9182 50.4836C17.9182 38.1553 18.6132 25.7423 17.5564 13.433C17.5236 13.0513 17.51 5.64622 16.7926 5.64622C15.5755 5.64622 12.2961 8.71205 11.5667 9.25967C9.07496 11.1304 2.77453 17.2062 4.21015 14.9343C6.11994 11.912 9.54737 8.14591 13.1746 5.8498C15.492 4.38286 16.2904 3.39426 19.3654 4.42477C22.8873 5.60507 26.547 6.67102 30.0584 7.88554C32.292 8.65807 34.4188 9.52833 36.41 10.532C37.0894 10.8745 39.3286 11.5499 38.4601 11.5499C33.2215 11.5499 30.0859 10.3419 25.4757 8.80163C24.0453 8.32376 18.1768 7.10006 18.6418 6.51141" stroke="black" stroke-width="8" stroke-linecap="round"/>
+  <path d="M15.9495 7.78254C15.9495 10.4225 15.9905 13.0168 16.5328 15.6372C16.7719 16.7923 17.1162 18.0407 17.1162 19.1894C17.1162 20.7583 17.5829 22.3027 17.5829 23.8791C17.5829 25.9859 17.3495 28.0772 17.3495 30.1843C17.3495 32.1039 17.2751 34.0129 17.5829 35.9207C17.9185 38.001 18.0382 40.2277 17.7644 42.3165C17.4821 44.47 17.1162 46.6324 17.1162 48.7947C17.1162 49.4627 17.3495 50.0153 17.3495 50.6573" stroke="black" stroke-width="8" stroke-linecap="round"/>
+</svg> </div> </a>
 </section>
 
 <style>
@@ -14,8 +20,13 @@ BESØG OS HER
     align-items: center;
     justify-content: center;
  width:100%;
-  height: 100%
+  height: 140%;
     }
+ .svg{
+padding: 2rem 0 2rem 0;
+  text-align: center;
+vertical-align: middle;
 
+}
 
 </style>
