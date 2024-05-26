@@ -6,22 +6,37 @@ import EventCard from "./EventCard.astro";
  <h2>UPCOMING EVENTS</h2>
  <p>Sæt kryds i kalenderen og glæd dig til det næste event!</p>
 <div class="cards_container">
-   
-    <EventCard/>
-    <EventCard/>
-    <EventCard/>
+    <EventCard img="../img/oliviarode.png" dato="23/05/24 kl. 17-20" tekst="Olivia Rode Hvass' kunstudstilling fylder butikken med spændende skulpturer. Kom og nyd kolde drikke, dejlig musik og støt en kommende kunstner!"/>
+    <EventCard img="../img/birthday.png" dato="7/6/24 kl. 17-23" tekst="Vi fejrer 3 års fødselsdag! Der vil være gratis drinks og vores yndlings DJ Asger Nørregård på fra 20-23. Eventet er gratis og åbent for alle. Vi vil i løbet af dagen også droppe nye items."/>
+        <EventCard img="../img/annaamalie.webp" dato="22/06/24 kl. 19-23" tekst="Kunstudstilling med Anna Amalie. Udstillingen “Sommerens tristhed er stadig til stede i efteråret” handler om tabet af kvinderettigheder, da USAs højesteret omstød abortlovene."/>
 </div>
 </section>
-<style>
 
+
+<style>
+h2 {
+  margin: 2rem 2rem 0 2rem;
+}
+p{
+  margin: 1rem 2rem 2rem 2rem;
+}
 .cards_container{
 display: flex;
 flex-direction: column;
+justify-content: space-between;
+margin: 2rem;
+
     }
   @media (min-width: 900px) {
   .cards_container{
 display: flex;
 flex-direction: row;
+margin: 4rem;
+gap: 2rem;
+    }
+
+       h2{
+      margin-top: 4rem;
     }
 
   }

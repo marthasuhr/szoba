@@ -7,9 +7,9 @@ import InstaCard from "../components/InstaCard.astro"
         SE MERE AF VORES UDVALG PÅ INSTAGRAM
     </h3>
     <div class="insta_container">
-    <InstaCard/>
-    <InstaCard/>
-    <InstaCard/>
+    <InstaCard img="img/insta1.webp" />
+    <InstaCard img="img/insta2.webp" />
+    <InstaCard img="img/insta3.webp" />
     </div>
 </section>
 
@@ -18,14 +18,25 @@ import InstaCard from "../components/InstaCard.astro"
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
    
-    padding: 1rem 5rem 5rem 5rem;
+    padding: 0.5rem 2rem 2rem 2rem;
  gap: 1rem;
     }
 
     h3{
-        
+        margin: 2rem 2rem 0 2rem;
     }
 
 
+  @media (min-width: 900px) {
 
+     h3{
+        margin: 2rem 5rem 2rem 5rem;
+    }
+     .insta_container{
+  
+   
+    padding: 1rem 5rem 5rem 5rem;
+ gap: 1rem;
+    }
+  }
 </style>

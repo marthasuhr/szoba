@@ -1,9 +1,85 @@
 ---
-const { img} = Astro.props;
+const { img, tekst, dato} = Astro.props;
+
 ---
 
 <section>
-<img src={img} alt="poster">
-
+    <div class="img">
+<img src={img} alt="poster"> </div>
+<div class="indhold">
+<p>{dato}</p>
+<div class="tekst"><p>{tekst} </p></div>
+</div>
 </section>
+
+<script>
+    
+var coll = document.getElementsByClassName("img");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+<style>
+
+    p{
+        font-size: 0.8rem;
+       
+    }
+
+    .tekst{
+        margin-top: 1rem;
+    }
+
+    section{
+margin: 2rem 0 2rem 0;
+
+    }
+.img {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+
+  outline: none;
+
+}
+
+.active, .img:hover {
+  background-color: #ccc;
+}
+
+.indhold{
+  padding: 0.4rem 1rem 1rem 1rem;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+
+}
+
+.img:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+</style>
 

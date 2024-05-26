@@ -4,22 +4,88 @@ import Instagram from "./svg/Instagram.astro"
 
 <section id="kunst" >
     <h3>MÅNEDENS KUNSTNER</h3>
-<img src="#" alt="#">
+    <div class="grid_container" >
+    <div class="container_grid_1">
+<img src="../img/oliviarode.webp" alt="olivia rode">
+ <figcaption>
+        <span class="caption">Olivia Rode Hvass</span>
+        <span class="photo-credit">Foto: I DO ART Agency.</span>
+    </figcaption>
+    </div>
+    <div class="container_grid_2">
 <h4>Olivia Rode Hvass</h4>
 <p>Olivia Rode Hvass (hun/hende, de/dem) er en kunstner baseret i København. Hun er uddannet med en BA fra Jylland Kunstakademi i 2021 og en mesterklasse med et stort stipendium i TC2-vævning med professor Corrie van Eijk-Doktor, Drachten NL. Rode Hvass arbejder på tværs af skulpturelle områder mellem tegning, tekstil, skulpturelt og installatorisk arbejde.
-
+<br>
 Hendes arbejde udfolder sig ud af en interesse for mennesker, eventyr og kulturdannelse i relation til myter, følelser og udtryk i det samfund, hun er vokset op med og opdraget af. Rode Hvass’ arbejde har en subtil underliggende humor, som inviterer beskueren indenfor.
 Rode Hvass har tidligere udstillet på forskellige danske platforme og institutioner såsom Kunsthal Aarhus, Kunsthal 6100, Kunsthal NORD, Skovgaard Museet (DK) og Tranen (DK).</p>
 <div class="container_info">
 <Instagram/>
 <p>@luxuxmusklen</p>
-</div>
+</div></div> </div>
 </section>
 
 <style>
+
+    figcaption {
+  color: var(--grey950);
+  font-size: 0.7rem;
+  font-family: Lato;
+  font-weight: var(--light);
+  margin-bottom: 2rem;
+}
+
 .container_info{
     display: flex;
     align-items: center;
     gap: 1rem;
+    margin-top: 2rem
 }
+
+h3{
+    margin-top: 6rem;
+margin-bottom: 1rem;
+}
+
+h4{
+    margin-top: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+section{
+    display: grid;
+    margin: 2rem;
+}
+
+  @media (min-width: 900px) {
+
+    section{
+       margin: 8rem;
+   
+}
+        figcaption {
+  color: var(--grey950);
+  font-size: 1rem;
+  font-family: Lato;
+  font-weight: var(--light);
+    margin-bottom: 4rem;
+}
+
+
+.grid_container{
+    display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 4rem
+}
+
+p{
+
+font-size: 1rem;
+}
+
+h4{
+    margin-top: 0rem;
+    margin-bottom: 0.8rem;
+}
+
+  }
 </style>
