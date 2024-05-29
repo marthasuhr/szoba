@@ -3,19 +3,12 @@ import ShopCard from "../components/ShopCard.astro";
 import Button from "./Button.astro";
 import InstaTeaser from "./InstaTeaser.astro";
 
-
-
-
-const shop = await fetch(
-  "https://fyvvuefyxnoyynrjyhuk.supabase.co/rest/v1/shop",
-  {
-    method: "GET",
-    headers: {
-      apikey:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ5dnZ1ZWZ5eG5veXlucmp5aHVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU5NTkxOTksImV4cCI6MjAzMTUzNTE5OX0.72K41vRnBsdHG8-yrn2BZLz5WLf88lxk8CPRLKEEYMk",
-    },
-  }
-).then((response) => {
+const shop = await fetch("https://fyvvuefyxnoyynrjyhuk.supabase.co/rest/v1/shop", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ5dnZ1ZWZ5eG5veXlucmp5aHVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU5NTkxOTksImV4cCI6MjAzMTUzNTE5OX0.72K41vRnBsdHG8-yrn2BZLz5WLf88lxk8CPRLKEEYMk",
+  },
+}).then((response) => {
   return response.json();
 });
 
@@ -23,17 +16,16 @@ console.log("shop", shop);
 ---
 
 <section>
-    <h2>
-        UGENS UDVALGTE VARER
-    </h2>
-    <p>Dyk ned i denne uges ekslusive online drop</p>
-<div class="shop_container" >
-     {
-        shop.map((vare) => {
-          return <ShopCard data={vare} />;
-        })
-      }     </div>
-   <!-- <div class="shop_container" >
+  <h2>UGENS UDVALGTE VARER</h2>
+  <p>Dyk ned i denne uges ekslusive online drop</p>
+  <div class="shop_container">
+    {
+      shop.map((vare) => {
+        return <ShopCard link={"/../undersider/" + vare.id} produkt={vare.produkt} pris={vare.pris} data={vare} imgPath={"/img/" + `${vare.image}`} />;
+      })
+    }
+  </div>
+  <!-- <div class="shop_container" >
       <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
     <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
     <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
@@ -44,46 +36,41 @@ console.log("shop", shop);
     <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
     <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
     <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
-    </div> --> 
-    <div class="knap"><Button variant="lys" size="lille">Se mere</Button> </div>
-<InstaTeaser/>
+    </div> -->
+  <div class="knap"><Button variant="lys" size="lille">Se mere</Button></div>
+  <InstaTeaser />
 </section>
 
 <style>
-.knap{
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 0 2rem 0;
-}
-  h2{
- display: grid;
-  margin: 2rem 2rem 0.5rem 2rem;
-}
+  .knap {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0 2rem 0;
+  }
+  h2 {
+    display: grid;
+    margin: 2rem 2rem 0.5rem 2rem;
+  }
 
-p{
-  display: grid;
-  margin: 0 2rem 2rem 2rem;
-}
-   .shop_container{
-  display: grid;
- 
- grid-template-columns: 1fr 1fr;
-   }
+  p {
+    display: grid;
+    margin: 0 2rem 2rem 2rem;
+  }
+  .shop_container {
+    display: grid;
 
-   
+    grid-template-columns: 1fr 1fr;
+  }
 
   @media (min-width: 900px) {
-
-    h2{
+    h2 {
       margin-top: 4rem;
     }
 
-    .shop_container{
+    .shop_container {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
-
   }
-
 </style>

@@ -1,61 +1,50 @@
 ---
-const { data} = Astro.props;
+const { data, link } = Astro.props;
 ---
-<a href="singleview">
 
-<section>
-  <div class="placeholder">
-    
+<a href={link}>
+  <section>
+    <div class="placeholder">
       <img src={"img/" + data.img} alt={"Image of " + data.img} />
-  </div>
-  <div class="beskrivelse">
-    <h4>{data.produkt}</h4>
-    <p>{data.pris}</p>
-  </div>
-</section>
-
+    </div>
+    <div class="beskrivelse">
+      <h4>{data.produkt}</h4>
+      <p>{data.pris}</p>
+    </div>
+  </section>
 </a>
 <style>
-    section{
-         width: 100%;
+  section {
+    width: 100%;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     padding: 2rem;
+  }
 
-
-    }
-
-    img{
-         width:  fill;
+  img {
+    width: fill;
     height: 100px;
     object-fit: cover;
-    }
+  }
 
-h4{
-     text-align: left;
-}
+  h4 {
+    text-align: left;
+  }
 
-p{
+  p {
     text-align: right;
-}
+  }
 
-.beskrivelse{
-border: solid var(--grey950) 2px;
-padding: 0.5rem 1rem 0.5rem 1rem;
-}
+  .beskrivelse {
+    border: solid var(--grey950) 2px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+  }
 
-
- @media (min-width: 900px) {
-
-    img{
-         width:  200px;
-    height: 200px;
-    object-fit: cover;
+  @media (min-width: 900px) {
+    img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
     }
-
- }
-    
-  
-
-   
+  }
 </style>

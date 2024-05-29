@@ -1,0 +1,43 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import H2Citat from "../../components/H2citat.astro";
+import Hero from "../../components/Hero.astro";
+import ShopTeaser from "../../components/ShopTeaser.astro";
+import IndexTeaser from "../../components/IndexTeaser.astro";
+
+export async function getStaticPaths() {
+  const url = "https://fyvvuefyxnoyynrjyhuk.supabase.co/rest/v1/shop";
+
+  const options = {
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ5dnZ1ZWZ5eG5veXlucmp5aHVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU5NTkxOTksImV4cCI6MjAzMTUzNTE5OX0.72K41vRnBsdHG8-yrn2BZLz5WLf88lxk8CPRLKEEYMk",
+    },
+  };
+
+  const response = await fetch(url, options);
+  const data = await response.json();
+
+  return data.map((vare) => {
+    return {
+      params: { slug: vare.id },
+      props: { vare },
+    };
+  });
+}
+
+const { vare } = Astro.props;
+---
+
+<Layout>
+  <section>
+    <div class="placeholder"></div>
+    <div class="beskrivelse">
+      <h4>{vare.produkt}</h4>
+      <img src={"img/" + vare.img} alt={"Image of " + vare.img} />
+    </div>
+  </section>
+</Layout>
+<style>
+  h4 {
+  }
+</style>

@@ -3,88 +3,73 @@ import ShopCard from "../components/ShopCard.astro";
 import Button from "./Button.astro";
 import H2citat from "./H2citat.astro";
 
-const shop = await fetch(
-  "https://fyvvuefyxnoyynrjyhuk.supabase.co/rest/v1/shop",
-  {
-    method: "GET",
-    headers: {
-      apikey:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ5dnZ1ZWZ5eG5veXlucmp5aHVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU5NTkxOTksImV4cCI6MjAzMTUzNTE5OX0.72K41vRnBsdHG8-yrn2BZLz5WLf88lxk8CPRLKEEYMk",
-    },
-  }
-).then((response) => {
+const shop = await fetch("https://fyvvuefyxnoyynrjyhuk.supabase.co/rest/v1/shop", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ5dnZ1ZWZ5eG5veXlucmp5aHVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU5NTkxOTksImV4cCI6MjAzMTUzNTE5OX0.72K41vRnBsdHG8-yrn2BZLz5WLf88lxk8CPRLKEEYMk",
+  },
+}).then((response) => {
   return response.json();
-
 });
 
 console.log("shop", shop);
-
 ---
 
 <section>
- 
-    <h2>UGENS NYHEDER</h2>
-    <p>Oplev ugens mest eksklusive nyheder - <br> håndplukkede varer, kun tilgængelige online!</p> 
-    <div class="card_container">
-
-  {
-        shop.map((vare) => {
-
-          return <ShopCard data={vare} />;
-        } 
-   
-    ) 
-      }  
+  <h2>UGENS NYHEDER</h2>
+  <p>Oplev ugens mest eksklusive nyheder - <br /> håndplukkede varer, kun tilgængelige online!</p>
+  <div class="card_container">
+    {
+      shop.map((vare, i) => {
+        if (i < 4) {
+          return <ShopCard link={"/../undersider/" + vare.id} produkt={vare.produkt} imgPath={"/img/" + `${vare.image}`} data={vare} />;
+        }
+      })
+    }
 
     <!-- 
     <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
     <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
     <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard>
     <ShopCard  imgPath="../img/produkt.png" produkt="lilla læderjakke" pris="150dkk" ></ShopCard> -->
-    </div>
+  </div>
   <a href="../shop">
-    <div class="knap" ><Button variant="lys" size="lille" >Se Mere</Button></div> </a>
-   <div class="citat" > <H2citat indhold="MERE END BARE MODE HOS SZÔBA"/> </div> 
+    <div class="knap"><Button variant="lys" size="lille">Se Mere</Button></div>
+  </a>
+  <div class="citat"><H2citat indhold="MERE END BARE MODE HOS SZÔBA" /></div>
 </section>
 
 <style>
+  .card_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+  }
+  .knap {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0 2rem 0;
+  }
 
-
-   .card_container{
-  display: grid;
- grid-template-columns: 1fr 1fr;
- overflow: hidden;
-
-   }
-.knap{
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 0 2rem 0;
-}
-
-
-  
-h2, p{
- display: grid;
-margin: 2rem;
-}
-
-
-  @media (min-width: 900px) {
-    .card_container{
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-
-    }
-
-  section{
+  h2,
+  p {
+    display: grid;
     margin: 2rem;
   }
 
-        h2{
+  @media (min-width: 900px) {
+    .card_container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    section {
+      margin: 2rem;
+    }
+
+    h2 {
       margin-top: 4rem;
     }
   }
-
 </style>
