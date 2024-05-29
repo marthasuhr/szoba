@@ -3,39 +3,37 @@ import Button from "../components/Button.astro";
 import Nav from "../components/Nav.astro";
 ---
 
- <div class="container">
-  <img src="../img/herotest.png" alt="heroplaceholder" style="width:100%;" >
+<div class="container">
+  <!--   <img src="../img/herotest.png" alt="heroplaceholder" style="width:100%;" /> -->
 
   <div class="centered">
     <h1>SZÔBA STORE</h1>
-    <a href="../shop">
-    <Button variant="lys" size="stor" >Shop</Button></a>
+    <a href="../shop"> <Button variant="lys" size="stor">Shop</Button></a>
   </div>
-</div> 
+</div>
+
 <style>
+  /* Container */
+  .container {
+    width: 100vw;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    background-image: url("../img/herotest.png");
+    background-size: cover; /* Skaler billedet, så det dækker hele containeren */
+    background-position: top center; /* Placer billedet helt øverst */
+    height: 100vh;
+  }
 
+  /* Centreret tekst */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-/* Container */
-.container {
-  position: relative;
-  text-align: center;
-
-
-
-}
-
-
-
-/* Centreret tekst */
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-h1{
+  h1 {
     color: var(--grey50);
-}
-
+  }
 </style>

@@ -2,6 +2,7 @@
 import Logo from "../components/svg/Logo.astro";
 import Kurv from "../components/svg/Kurv.astro";
 ---
+
 <nav>
   <a href="../"><Logo /></a>
   <ul class="nav_menu">
@@ -9,7 +10,7 @@ import Kurv from "../components/svg/Kurv.astro";
     <li><a href="../events">Events og Kunst</a></li>
     <li><a href="../about">Om os</a></li>
   </ul>
-    <div class="nav_icons">
+  <div class="nav_icons">
     <a class="kurv" href="#"><Kurv /></a>
   </div>
 
@@ -20,9 +21,27 @@ import Kurv from "../components/svg/Kurv.astro";
   </div>
 </nav>
 <script src="../scripts/burger.js"></script>
+<script>
+  //Gør så klassen .active viser sig efter hvilken side man er på//
+  var currentLocation = window.location.href;
+  var menuLinks = document.querySelectorAll("nav ul li a");
+
+  menuLinks.forEach(function (link: HTMLAnchorElement) {
+    if (link.href === currentLocation) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+</script>
 
 <style>
   .nav_menu a:hover {
+    color: var(--blue700);
+    text-decoration: underline;
+  }
+
+  .active {
     color: var(--blue700);
     text-decoration: underline;
   }
@@ -33,19 +52,15 @@ import Kurv from "../components/svg/Kurv.astro";
     align-items: center;
     vertical-align: middle;
     padding: 1.5rem;
-z-index: 100;
+    z-index: 100;
     position: sticky;
-
-   
-
+    background-color: transparent;
   }
   li a {
     padding-left: 2rem;
     padding-right: 2rem;
     font-size: 1.3rem;
-    
   }
-
 
   .burger {
     display: none;
@@ -53,8 +68,6 @@ z-index: 100;
   .nav_menu {
     display: flex;
   }
-
-
 
   /*BURGER*/
   @media (max-width: 900px) {
