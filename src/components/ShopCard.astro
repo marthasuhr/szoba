@@ -4,7 +4,7 @@ const { data, link } = Astro.props;
 
 <a href={link}>
   <section>
-    <div class="placeholder">
+    <div class="billede">
       <img src={"img/" + data.img} alt={"Image of " + data.img} />
     </div>
     <div class="beskrivelse">
@@ -21,10 +21,18 @@ const { data, link } = Astro.props;
     padding: 2rem;
   }
 
+  .billeder:hover {
+    width: 80%;
+  }
+
   img {
     width: fill;
     height: 100px;
     object-fit: cover;
+  }
+
+  img:hover {
+    width: 120%;
   }
 
   h4 {
