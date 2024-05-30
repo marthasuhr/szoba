@@ -3,8 +3,10 @@ import EventCard from "./EventCard.astro";
 ---
 
 <section id="events">
-  <h2>UPCOMING EVENTS</h2>
-  <p>Sæt kryds i kalenderen og glæd dig til det næste event!</p>
+  <div class="tekst">
+    <h2>UPCOMING EVENTS</h2>
+    <p>Sæt kryds i kalenderen og glæd dig til det næste event!</p>
+  </div>
   <div class="cards_container">
     <EventCard img="../img/oliviarode.png" dato="23/05/24 kl. 17-20" tekst="Olivia Rode Hvass' kunstudstilling fylder butikken med spændende skulpturer. Kom og nyd kolde drikke, dejlig musik og støt en kommende kunstner!" />
     <EventCard img="../img/birthday.png" dato="7/6/24 kl. 17-23" tekst="Vi fejrer 3 års fødselsdag! Der vil være gratis drinks og vores yndlings DJ Asger Nørregård på fra 20-23. Eventet er gratis og åbent for alle. Vi vil i løbet af dagen også droppe nye items." />
@@ -35,6 +37,10 @@ import EventCard from "./EventCard.astro";
 
     h2 {
       margin-top: 4rem;
+    }
+
+    .tekst {
+      margin-left: 2rem;
     }
   }
 </style>
