@@ -8,6 +8,7 @@ import Nav from "../components/Nav.astro";
 
   <div class="centered">
     <h1>SZÔBA STORE</h1>
+    <h3>Vi sælger kurateret vintage tøj</h3>
     <a href="../shop"> <Button variant="lys" size="stor">Shop</Button></a>
   </div>
 </div>
@@ -34,10 +35,13 @@ import Nav from "../components/Nav.astro";
     transform: translate(-50%, -50%);
   }
 
-  h1 {
+  h1,
+  h3 {
     color: var(--grey50);
   }
-
+  h3 {
+    padding-bottom: 2rem;
+  }
   @media (min-width: 1200px) {
     .container {
       margin-top: -23%;
