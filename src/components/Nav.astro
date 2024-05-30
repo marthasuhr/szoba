@@ -22,15 +22,15 @@ import Kurv from "../components/svg/Kurv.astro";
 </nav>
 <script src="../scripts/burger.js"></script>
 <script>
-  //Gør så klassen .active viser sig efter hvilken side man er på//
+  //Gør så klassen .active1 viser sig efter hvilken side man er på//
   var currentLocation = window.location.href;
   var menuLinks = document.querySelectorAll("nav ul li a");
 
   menuLinks.forEach(function (link: HTMLAnchorElement) {
     if (link.href === currentLocation) {
-      link.classList.add("active");
+      link.classList.add("active1");
     } else {
-      link.classList.remove("active");
+      link.classList.remove("active1");
     }
   });
 </script>
@@ -41,7 +41,7 @@ import Kurv from "../components/svg/Kurv.astro";
     text-decoration: underline;
   }
 
-  .active {
+  .active1 {
     color: var(--blue700);
     text-decoration: underline;
   }

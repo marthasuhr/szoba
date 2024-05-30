@@ -5,6 +5,7 @@ import Hero from "../../components/Hero.astro";
 import ShopTeaser from "../../components/ShopTeaser.astro";
 import IndexTeaser from "../../components/IndexTeaser.astro";
 import Button from "../../components/Button.astro";
+import ShopCard from "../../components/ShopCard.astro";
 
 export async function getStaticPaths() {
   const url = "https://fyvvuefyxnoyynrjyhuk.supabase.co/rest/v1/shop";
@@ -25,12 +26,21 @@ export async function getStaticPaths() {
     };
   });
 }
+const shop = await fetch("https://fyvvuefyxnoyynrjyhuk.supabase.co/rest/v1/shop", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ5dnZ1ZWZ5eG5veXlucmp5aHVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU5NTkxOTksImV4cCI6MjAzMTUzNTE5OX0.72K41vRnBsdHG8-yrn2BZLz5WLf88lxk8CPRLKEEYMk",
+  },
+}).then((response) => {
+  return response.json();
+});
 
+console.log("shop", shop);
 const { vare } = Astro.props;
 ---
 
 <Layout>
-  <section>
+  <section class="single_container">
     <a href="../shop">
       <svg xmlns="http://www.w3.org/2000/svg" width="116" height="54" viewBox="0 0 116 54" fill="none">
         <path d="M111.598 31.5267C83.0608 31.5267 54.3279 30.6042 25.8348 32.0069C24.9515 32.0504 7.8105 32.0685 7.8105 33.0207C7.8105 34.6361 14.9071 38.9889 16.1747 39.957C20.505 43.2641 34.569 51.6265 29.3101 49.7211C22.3142 47.1863 13.5966 42.6371 8.28173 37.8227C4.88614 34.7469 2.59778 33.6873 4.98316 29.6059C7.71525 24.9313 10.1826 20.074 12.994 15.4133C14.7822 12.4487 16.7966 9.62591 19.1199 6.98308C19.9126 6.0813 21.476 3.10917 21.476 4.26193C21.476 11.215 18.6798 15.3768 15.1145 21.4959C14.0083 23.3943 11.1758 31.1835 9.8132 30.5663" stroke="black" stroke-width="8" stroke-linecap="round"></path>
@@ -52,8 +62,27 @@ const { vare } = Astro.props;
       </div>
     </div>
   </section>
+  <div class="h3_container">
+    <h3>SHOP ANDRE PRODUKTER</h3>
+  </div>
+  <section class="produkter_container">
+    {
+      shop.map((vare, i) => {
+        if (i < 3) {
+          return <ShopCard link={"/../undersider/" + vare.id} produkt={vare.produkt} imgPath={"/../img/" + vare.img} data={vare} />;
+        }
+      })
+    }
+  </section>
   <style>
-    section {
+    .h3_container {
+      margin: 2rem;
+    }
+    .produkter_container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .single_container {
       margin: 2rem;
       display: grid;
     }
@@ -69,6 +98,10 @@ const { vare } = Astro.props;
     }
 
     @media (min-width: 900px) {
+      .produkter_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
       .container {
         max-width: 1200px;
         margin: 0 auto;
@@ -85,9 +118,6 @@ const { vare } = Astro.props;
       .produkt_info {
         flex: 1;
         padding: 20px;
-      }
-
-      .produkt_info {
       }
     }
   </style>
