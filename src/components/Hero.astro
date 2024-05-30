@@ -23,6 +23,7 @@ import Nav from "../components/Nav.astro";
     background-size: cover; /* Skaler billedet, så det dækker hele containeren */
     background-position: top center; /* Placer billedet helt øverst */
     height: 100vh;
+    margin-top: -30%;
   }
 
   /* Centreret tekst */
@@ -35,5 +36,17 @@ import Nav from "../components/Nav.astro";
 
   h1 {
     color: var(--grey50);
+  }
+
+  @media (min-width: 1200px) {
+    .container {
+      margin-top: -23%;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .container {
+      margin-top: -8%;
+    }
   }
 </style>
